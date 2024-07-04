@@ -1,0 +1,118 @@
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-image: url(../Imagens/cenario4.png);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.center {
+    width: 100%;
+}
+.top { 
+    width: 100%;
+    height: 100vh;
+    font-family: poppins;
+    font-size: 100px;
+    color: black;
+    text-shadow: 3px 3px rgb(255, 255, 255, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carousel {
+    width: 100%;
+    height: fit-content; /*ver depois*/
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.left {
+    flex-basis: 50%; /*ver*/
+    height: fit-content;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    z-index: 10;
+}
+.left-item {
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box; /*ver*/
+    padding: 0 60px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.title {
+    font-size: 110px;
+    font-family: poppins;
+    font-weight: 600;
+    color: black;
+}
+.text {
+    font-size: 18px;
+    font-family: poppins;
+    font-weight: 400;
+    color: black;
+}
+.right {
+    position: sticky;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    flex-basis: 50%;
+}
+.item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: 0.25s;
+    transform: scale(0.3);
+}
+.item.active {
+    opacity: 1;
+    transform: scale(1);
+}
+.item img {
+    width: 400px;
+}
+.item button {
+    background-color: white;
+    padding: 15px 40px;
+    font-family: poppins;
+    font-size: 16px;
+    font-weight: 600;
+    color: black;
+    outline: none;
+    border: none;
+    border-radius: 7mm;
+    margin-top: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.item button:hover {
+    transform: scale(1.2);
+}
+.item::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    backdrop-filter: blur(6px) saturate(200%);
+    -webkit-backdrop-filter: rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(209, 213, 219,0.3);
+    z-index: -1;
+}
